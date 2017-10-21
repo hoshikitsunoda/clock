@@ -30,5 +30,5 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  text-shadow: 0 0 20px rgba(10, 175, 230, 1), 0 0 20px rgba(10, 175, 230, 0);
+  text-shadow: 0 0 3rem rgba(10, 175, 230, 1);
 }

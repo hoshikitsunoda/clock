@@ -4,7 +4,8 @@
   "description": "A web site for curious people who want to know the time.",
   "main": "app.js",
   "scripts": {
-    "watch": "nodemon"
+    "watch": "nodemon",
+    "seed": "node seed.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,8 @@
   },
   "homepage": "https://github.com/ronperris/clock#readme",
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "mongodb": "^2.2.33"
   },
   "devDependencies": {
     "nodemon": "^1.12.1"

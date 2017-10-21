@@ -1,0 +1,26 @@
+{
+  "name": "clock",
+  "version": "1.0.0",
+  "description": "A web site for curious people who want to know the time.",
+  "main": "app.js",
+  "scripts": {
+    "watch": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ronperris/clock.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ronperris/clock/issues"
+  },
+  "homepage": "https://github.com/ronperris/clock#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  }
+}

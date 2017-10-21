@@ -1,19 +1,18 @@
 const { Router } = require('express')
 
-const timezones = new Router()
+module.exports = collection => {
+  const timezones = new Router()
 
-timezones.get('/', (req, res) => {
-  res.send([
-    'Asia/Tokyo',
-    'Asia/Dubai',
-    'Europe/Istanbul',
-    'Europe/Stockholm',
-    'America/Sao_Paulo',
-    'America/New_York',
-    'America/Chicago',
-    'America/Denver',
-    'Pacific/Guam'
-  ])
-})
+  timezones.get('/', (req, res) => {
+    collection
+      .find({}, { _id: 0 })
+      .toArray()
+      .then(result =>
+        res.send(
+          result.reduce((zones, document) => [...zones, document.zone], [])
+        )
+      )
+  })
 
-module.exports = timezones
+  return timezones
+}

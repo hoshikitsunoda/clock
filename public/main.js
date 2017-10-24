@@ -17,18 +17,21 @@ const $times = time =>
     return $time.appendChild($value).parentNode
   })(document.createElement('div'), document.createElement('div'))
 
-fetch('/timezones')
-  .then(res => res.json())
-  .then(timezones =>
-    setInterval(() => {
-      document.querySelector('.times').innerHTML = ''
-      document.querySelector('.times').appendChild(
-        times(timezones)
-          .map($times)
-          .reduce(
-            (root, element) => root.appendChild(element).parentNode,
-            document.createElement('div')
-          )
-      )
-    }, 16)
-  )
+async function start() {
+  const response = await fetch('/timezones')
+  const timezones = await response.json()
+
+  setInterval(() => {
+    document.querySelector('.times').innerHTML = ''
+    document.querySelector('.times').appendChild(
+      times(timezones)
+        .map($times)
+        .reduce(
+          (root, element) => root.appendChild(element).parentNode,
+          document.createElement('div')
+        )
+    )
+  }, 16)
+}
+
+start()
